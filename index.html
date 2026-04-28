@@ -1,63 +1,95 @@
+<!DOCTYPE html>
 <html>
+<head>
     <style>
-        section{
-            width:100%;
-            height:100%;
-            background-color:black;
+
+        @keyframes quicarHorizontal {
+            from { left: 0%; }
+            to { left: calc(100% - 100px); }
+        }
+        @keyframes quicarVertical {
+            from { top: 0%; }
+            to { top: calc(100% - 100px); }
+        }
+
+        .pato-quicando {
+            position: absolute;
+            width: 100px;
+            z-index: 999;
+            pointer-events: none;
+            animation: 
+                quicarHorizontal 6s linear infinite alternate, 
+                quicarVertical 4s linear infinite alternate;
+        }
+
+     
+        section {
+            width: 100%;
+            min-height: 110vh; 
+            background-color: black;
             display: flex;
+            position: relative; 
         }
-        #primeiro{
-            width:20%;
-            height:110%;
-            background-color:black;
+
+        #primeiro {
+            width: 20%;
+            background-color: black;
             border: 2px solid black;
-            background-image:url("https://www.petz.com.br/blog/wp-content/uploads/2020/01/como-criar-furao.webp");
-            background-size:100% 50%;
-            background-repeat:no-repeat;
-            background-position: 0px 150px; 
-        }
-         #segundo {
-    width: 60%;
-    height: 110%;
-    background-color: lightgray;
-    border: 2px solid black;
-    background-image: url("https://s2.glbimg.com/Gmh2QM0BQPRQCSefhPPzKITl9EE=/400x280/e.glbimg.com/og/ed/f/original/2013/12/03/como_criar_marreco.jpg");
-    background-repeat: no-repeat;
-    background-size:40% 40%;
-   
-    background-position: 0px 450px; 
-         }
-         #terceiro{
-            width:20%;
-            height:110%;
-            background-color:white;
-            border: 2px solid black;
-            background-image:url("data:image/jpeg;base64,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");
+            background-image: url("https://www.petz.com.br/blog/wp-content/uploads/2020/01/como-criar-furao.webp");
+            background-size: 100% auto;
             background-repeat: no-repeat;
-            background-size:100% 100%;
+            background-position: 0px 100px; 
+        }
+
+        #segundo {
+            width: 60%;
+            background-color: lightgray;
+            border: 2px solid black;
+            background-image: url("https://s2.glbimg.com/Gmh2QM0BQPRQCSefhPPzKITl9EE=/400x280/e.glbimg.com/og/ed/f/original/2013/12/03/como_criar_marreco.jpg");
+            background-repeat: no-repeat;
+            background-size: 40% auto;
+            background-position:5% 80%; 
+            padding-bottom: 100px; 
+        }
+
+        #terceiro {
+            width: 20%;
+            background-color: white;
+            border: 2px solid black;
+            background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVtYWZ4ZHI1bml1dmRmdXF0bHZodWM5aWcza2Z2YXZ5eDFod3lyNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/otXp0Hmfg3q2mg36Is/giphy.gif");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
         }
     </style>
-    <body>
-    <header></header>
+</head>
+<body>
     <h1 style="text-align:center;">FATOS SOBRE FURÕES</h1>
-    <Section>
+    
+    <section>
+        <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dWV5amRjMGh3NjVtOWhyeHN5N2VvOXhmYW1td3UwZzd2anhtemc2bCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Y0zTJ7VrKo9P2/giphy.gif" class="pato-quicando">
+
         <div id="primeiro">
-            <h2 style="color: white;">Aqui esta uma lontra, furão 2.0, edição aquatica.</h2>
-            
+            <h2 style="color: white; padding: 10px;">Aqui esta uma lontra, furão 2.0, edição aquatica.</h2>
         </div>
+
         <div id="segundo">
-            <strong>Fatos legais:</strong>
-            <h1>1:</h1>
-            <p>são mustelídeos curiosos, extremamente flexíveis e dorminhocos, passando de 14 a 18 horas por dia dormindo. </p>
-            <h1>2:</h1>
-            <p>Conhecidos pelo comportamento brincalhão semelhante a cachorros, eles são carnívoros estritos, adoram esconder objetos e possuem um olfato apurado, vivendo geralmente entre 8 a 10 anos.</p>
-            <h1>A BAIXO ESTA A FOTO DE UM MARRECO PARA REFERENCIA, ELE NÃO É UM FURÃO.</h1>
-            <h2>Como pode ver, esse NÃO é um furão, diferente do animal ao lado ---------></h2>
-            <p>(imagem esticada para melhor representar um furão)</p>
+            <div style="padding: 20px;">
+                <strong>Fatos legais:</strong>
+                <h1>1:</h1>
+                <p>são mustelídeos curiosos, extremamente flexíveis e dorminhocos, passando de 14 a 18 horas por dia dormindo. </p>
+                <h1>2:</h1>
+                <p>Conhecidos pelo comportamento brincalhão semelhante a cachorros, eles são carnívoros estritos, adoram esconder objetos e possuem um olfato apurado, vivendo geralmente entre 8 a 10 anos.</p>
+                
+                <h1>A BAIXO ESTA A FOTO DE UM MARRECO PARA REFERENCIA, ELE NÃO É UM FURÃO.</h1>
+                <h2>Como pode ver, esse NÃO é um furão, diferente do animal ao lado ---------></h2>
+            </div>
         </div>
-        <div id="terceiro">
-        </div>
-    </Section>
-    <footer></footer>
-    </body>
+
+        <div id="terceiro"></div>
+    </section>
+</body>
 </html>
