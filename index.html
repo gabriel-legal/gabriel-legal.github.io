@@ -2,7 +2,6 @@
 <html>
 <head>
     <style>
-
         @keyframes quicarHorizontal {
             from { left: 0%; }
             to { left: calc(100% - 100px); }
@@ -16,19 +15,19 @@
             position: absolute;
             width: 100px;
             z-index: 999;
-            pointer-events: none;
+            pointer-events: auto; 
             animation: 
                 quicarHorizontal 6s linear infinite alternate, 
                 quicarVertical 4s linear infinite alternate;
         }
 
-     
         section {
             width: 100%;
             min-height: 170vh; 
             background-color: black;
             display: flex;
             position: relative; 
+            overflow: hidden;
         }
 
         #primeiro {
@@ -48,8 +47,13 @@
             background-image: url("https://s2.glbimg.com/Gmh2QM0BQPRQCSefhPPzKITl9EE=/400x280/e.glbimg.com/og/ed/f/original/2013/12/03/como_criar_marreco.jpg");
             background-repeat: no-repeat;
             background-size: 40% auto;
-            background-position:5% 52%; 
-            padding-bottom: 100px; 
+            background-position: 5% 52%; 
+            padding-bottom: 40px; /* Espaço no final */
+            
+            /* ADICIONADO PARA CENTRALIZAR E MOVER O BOTÃO */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza tudo horizontalmente */
         }
 
         #terceiro {
@@ -60,35 +64,59 @@
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
+
         body {
             margin: 0;
             padding: 0;
         }
+
+        /* Classe para o link do botão */
+        .container-botao {
+            margin-top: auto; /* Empurra para o fim da div cinza */
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+    
     <h1 style="text-align:center;">FATOS SOBRE FURÕES</h1>
     
     <section>
-        <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dWV5amRjMGh3NjVtOWhyeHN5N2VvOXhmYW1td3UwZzd2anhtemc2bCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Y0zTJ7VrKo9P2/giphy.gif" class="pato-quicando">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="pato-quicando">
+            <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dWV5amRjMGh3NjVtOWhyeHN5N2VvOXhmYW1td3UwZzd2anhtemc2bCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Y0zTJ7VrKo9P2/giphy.gif" style="width: 100%; cursor: pointer;" alt="Pato">
+        </a>
 
         <div id="primeiro">
             <h2 style="color: white; padding: 10px;">Aqui esta uma lontra, furão 2.0, edição aquatica.</h2>
         </div>
 
         <div id="segundo">
-            <div style="padding: 20px;">
+            <div style="padding: 20px; width: 100%;">
                 <strong>FATOS LEGAIS</strong>
-                <h1>1:</h1>
-                <p>são mustelídeos curiosos, extremamente flexíveis e dorminhocos, passando de 14 a 18 horas por dia dormindo. </p>
-                <h1>2:</h1>
+                <h2>1:</h2>
+                <p>são mustelídeos curiosos, extremamente flexíveis. </p>
+                <h2>2:</h2>
                 <p>Conhecidos pelo comportamento brincalhão semelhante a cachorros, eles são carnívoros estritos, adoram esconder objetos e possuem um olfato apurado.</p>
                 <h1>MEDIA DE VIDA:</h1>
                 <P>geralmente entre 8 a 10 anos.</P>
                 
                 <h1>A BAIXO ESTA A FOTO DE UM MARRECO PARA REFERENCIA, ELE NÃO É UM FURÃO.</h1>
                 <h3>Como pode ver, esse NÃO é um furão, diferente do animal ao lado (que é um furão) ---------></h3>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <h2>Você sabia que furões:</h2>
+                <p>Adoram água, diferente dos gatos. muitos furões amam água e adoram brincar em suas trigelas de água, espalhando tudo pelo ambiente.</p>
+                <p>Mudam de cor! A pelagem do furão pode mudar de cor ou tom com as estações do ano.</p>
+                <p>Dormem 18 horas por dia. Apesar de terem muita energia, furões são extremamente preguiçosos e podem dormir cerca de 18 horas diárias.</p>
+                <p>Morte falsa! Quando dormem, entram em um sono tão profundo (chamado ferret dead sleep) que parecem ter morrido. Eles ficam moles e podem não acordar imediatamente, o que assusta muito os donos inexperientes.</p>
+                <p>O nome "furão" vem do latim furittus, que significa "pequeno ladrão". Eles adoram roubar e esconder objetos, especialmente chaves, carteiras, meias e itens de borracha, criando esconderijos secretos pela casa.</p>
+                <p>O esqueleto do furão é incrivelmente flexível, permitindo que eles entrem em qualquer buraco, ralo ou tubulação onde caiba a cabeça.</p>
             </div>
+
+            <a href="https://pt.wikipedia.org/wiki/Fur%C3%A3o" target="_blank" rel="noopener noreferrer" class="container-botao">
+                <button style="font-size:40px; border-radius:25px; cursor:pointer; padding: 10px 20px; background-color: black; color: white; border: none;">
+                    mais sobre furões
+                </button>
+            </a>
         </div>
 
         <div id="terceiro"></div>
