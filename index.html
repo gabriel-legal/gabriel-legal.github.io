@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <style>
@@ -29,6 +30,26 @@
             position: relative; 
             overflow: hidden;
         }
+        .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Espaço entre os elementos */
+  text-align: center;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  width: 200px; /* Mantém os botões do mesmo tamanho */
+}
+
+
+
 
         #primeiro {
             width: 20%;
@@ -37,7 +58,7 @@
             background-image: url("https://www.petz.com.br/blog/wp-content/uploads/2020/01/como-criar-furao.webp");
             background-size: 100% auto;
             background-repeat: no-repeat;
-            background-position: 0px 100px; 
+            background-position: 0px 150px; 
         }
 
         #segundo {
@@ -60,7 +81,7 @@
             width: 20%;
             background-color: white;
             border: 2px solid black;
-            background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVtYWZ4ZHI1bml1dmRmdXF0bHZodWM5aWcza2Z2YXZ5eDFod3lyNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/otXp0Hmfg3q2mg36Is/giphy.gif");
+            background-image: url("https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bXVnZmpyazc5bTZiYmVsbzJheTF6bDgybnNjNGtvYW9wc2xmN2JraCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/g6nBkPCWj8u0vWLX3k/giphy.gif");
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
@@ -78,13 +99,26 @@
     </style>
 </head>
 <body>
-    <a href="https://stock.adobe.com/br/search?k=fur%C3%A3o" target="_blank" rel="noopener noreferrer" class="container-button">
-      <button style="font-size:60px; margin-left: 100px; margin-top: 50px; border-radius:25px; cursor:pointer; padding: 10px 20px; background-color: black; color: white; border: none;">fotos de furão</button>
+
+  <!-- Container Flexbox para alinhar e centralizar os botões lado a lado -->
+  <div style="display: flex; justify-content: center; gap: 20px; margin-top: 50px; margin-bottom: 20px;">
+    
+    <a href="https://adobe.com" target="_blank" rel="noopener noreferrer" class="container-button" style="text-decoration: none;">
+      <button style="font-size: 24px; border-radius: 25px; cursor: pointer; padding: 10px 20px; background-color: black; color: white; border: none;">
+        fotos de furão
+      </button>
     </a>
-    <a href="https://stock.adobe.com/br/search?k=marreco" target="_blank" rel="noopener noreferrer" class="container-button">
-        <button style="font-size:60px; margin-left: 500px; margin-top: 50px; border-radius:25px; cursor:pointer; padding: 10px 20px; background-color: black; color: white; border: none;">fotos de marreco</button>
-      </a>
-    <h1 style="text-align:center;">FATOS SOBRE FURÕES</h1>
+
+    <a href="https://stock.adobe.com/br/search?k=marreco" target="_blank" rel="noopener noreferrer" class="container-button" style="text-decoration: none;">
+      <button style="font-size: 24px; border-radius: 25px; cursor: pointer; padding: 10px 20px; background-color: black; color: white; border: none;">
+        fotos de marreco
+      </button>
+    </a>
+
+  </div>
+
+  <h1 style="text-align: center;">FATOS SOBRE FURÕES</h1>
+  
     
     <section>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="pato-quicando">
@@ -99,6 +133,7 @@
             <p style="color: white; padding: 10px;">Choram quando assustadas! Quando estão com medo ou estressadas, as lontras podem emitir sons que lembram um choro.</p>
             <p style="color: white; padding: 10px;">Usam ferramentas! Lontras utilizam pedras para quebrar mariscos, ouriços e outros animais de casca dura. Elas têm até um "bolsinho" de pele especial na barriga para guardar sua pedra favorita.</p>
         </div>
+        
 
         <div id="segundo">
             <div style="padding: 20px; width: 100%;">
@@ -133,4 +168,3 @@
     </section>
 </body>
 </html>
-
